@@ -3,865 +3,404 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trip’s Sweet Treats | Monthly Cake Drops</title>
+  <title>Trip's Sweet Treats | Monthly Cake Drops</title>
   <meta
     name="description"
-    content="Trip’s Sweet Treats releases limited monthly cake drops. Join the newsletter for early access, VIP priority, and first shot at the next drop."
+    content="Trip's Sweet Treats releases limited monthly cake drops. Join the list for early access, VIP priority, and exclusive cake releases."
   />
-  <style>
-    :root {
-      --bg: #0f0f12;
-      --bg-soft: #17171d;
-      --card: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.12);
-      --text: #f5f1ea;
-      --muted: #c7bfb3;
-      --accent: #f3b15d;
-      --accent-2: #ffdfb0;
-      --danger: #ff7a7a;
-      --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
-      --radius: 22px;
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(243, 177, 93, 0.18), transparent 28%),
-        linear-gradient(180deg, #0b0b0f 0%, #111116 100%);
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(10, 10, 13, 0.72);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand strong {
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .brand span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.95rem;
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent) 0%, #d98a2f 100%);
-      color: #1b1208;
-      box-shadow: 0 10px 24px rgba(243, 177, 93, 0.28);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(243, 177, 93, 0.34);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.14);
-      color: #fff;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    .hero {
-      padding: 80px 0 50px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(243, 177, 93, 0.12);
-      border: 1px solid rgba(243, 177, 93, 0.25);
-      color: var(--accent-2);
-      font-size: 0.88rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 16px;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .hero p {
-      margin: 0 0 24px;
-      color: var(--muted);
-      font-size: 1.06rem;
-      max-width: 640px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .micro-proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .micro-proof span {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 10px 14px;
-      border-radius: 999px;
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .hero-badge {
-      position: absolute;
-      bottom: 34px;
-      left: 34px;
-      background: rgba(14, 14, 18, 0.8);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 18px;
-      padding: 16px 18px;
-      max-width: 280px;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-badge strong {
-      display: block;
-      font-size: 1.5rem;
-      margin-bottom: 4px;
-    }
-
-    .hero-badge span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .section {
-      padding: 44px 0;
-    }
-
-    .section-title {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      margin: 0 0 12px;
-      letter-spacing: -0.03em;
-    }
-
-    .section-subtitle {
-      margin: 0 0 26px;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .countdown-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .countdown-card,
-    .info-card,
-    .step,
-    .newsletter-box,
-    .vibe-box,
-    .final-cta {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .countdown-card,
-    .info-card,
-    .newsletter-box,
-    .vibe-box,
-    .final-cta {
-      padding: 26px;
-    }
-
-    .countdown-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .time-box {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 18px;
-      padding: 18px 14px;
-      text-align: center;
-    }
-
-    .time-box strong {
-      display: block;
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .time-box span {
-      color: var(--muted);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-
-    .drop-status {
-      display: inline-block;
-      margin-top: 14px;
-      color: var(--accent-2);
-      font-weight: 700;
-    }
-
-    .info-card ul {
-      padding-left: 18px;
-      margin: 14px 0 0;
-      color: var(--muted);
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .step {
-      padding: 24px;
-    }
-
-    .step-number {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(243, 177, 93, 0.14);
-      border: 1px solid rgba(243, 177, 93, 0.28);
-      color: var(--accent-2);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .step h3 {
-      margin: 0 0 10px;
-      font-size: 1.2rem;
-    }
-
-    .step p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .newsletter-layout {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    input,
-    select {
-      width: 100%;
-      padding: 15px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.13);
-      background: rgba(255,255,255,0.05);
-      color: #fff;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    input::placeholder {
-      color: #b9b1a6;
-    }
-
-    label.small {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .tiny-note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .vip-list,
-    .drop-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .pill {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      color: var(--muted);
-    }
-
-    .pill strong {
-      color: #fff;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .gallery img {
-      height: 320px;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: #1a1a21;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .stat {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.9rem;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--muted);
-    }
-
-    .faq {
-      display: grid;
-      gap: 14px;
-    }
-
-    .faq details {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 18px;
-      padding: 18px 20px;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .faq p {
-      margin: 12px 0 0;
-      color: var(--muted);
-    }
-
-    .final-cta {
-      text-align: center;
-    }
-
-    .final-cta h2 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
-
-    .final-cta p {
-      margin: 0 auto 24px;
-      max-width: 720px;
-      color: var(--muted);
-    }
-
-    footer {
-      padding: 28px 0 46px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 22px;
-      margin-top: 22px;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .countdown-wrap,
-      .newsletter-layout,
-      .grid-3,
-      .gallery,
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card img {
-        height: 420px;
-      }
-
-      .countdown-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero {
-        padding-top: 56px;
-      }
-
-      h1 {
-        line-height: 1;
-      }
-
-      .hero-card img {
-        height: 340px;
-      }
-
-      .hero-badge {
-        left: 22px;
-        right: 22px;
-        bottom: 24px;
-        max-width: none;
-      }
-
-      .countdown-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .time-box {
-        padding: 16px 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a href="#" class="brand">
-        <strong>Trip’s Sweet Treats</strong>
-        <span>Luxury monthly cake drops</span>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand" aria-label="Trip's Sweet Treats Home">
+        <img
+          src="images/trips-sweet-treats-logo.webp"
+          alt="Trip's Sweet Treats logo"
+          class="brand-logo"
+          width="190"
+          height="190"
+        />
       </a>
 
-      <nav class="nav-links">
-        <a href="#how">How It Works</a>
-        <a href="#drop">Next Drop</a>
-        <a href="#newsletter">Newsletter</a>
+      <nav class="main-nav">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#featured-drops">Drops</a>
+        <a href="#join-drop">Join</a>
         <a href="#faq">FAQ</a>
         <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
-        <a href="#newsletter" class="btn btn-primary">Join the Drop List</a>
       </nav>
+
+      <a href="#join-drop" class="nav-cta">Join the Drop</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
+      <div class="hero-overlay"></div>
       <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Monthly Drop • Limited Release</div>
-          <h1>Luxury Cakes.<br>Released Like a Drop.</h1>
-          <p>
-            Trip’s Sweet Treats doesn’t do boring, endless orders. Each month,
-            a limited cake drop goes live. The first 20 subscribers selected for the drop
-            plus 5 VIP members get access to buy before it sells out.
+
+        <div class="hero-content">
+          <p class="eyebrow">Limited Monthly Cake Drops</p>
+          <h1>Luxury Cakes.<br>Limited Releases.<br>Monthly Hype.</h1>
+          <p class="hero-text">
+            Trip's Sweet Treats drops small-batch cakes once a month instead of
+            taking endless orders. The first 20 people on the drop list, plus 5 VIPs,
+            get access to buy before the drop is gone.
           </p>
 
           <div class="hero-actions">
-            <a href="#newsletter" class="btn btn-primary">Get on the List</a>
-            <a href="#drop" class="btn btn-secondary">See Next Drop</a>
+            <a href="#join-drop" class="btn btn-primary">Join the Drop List</a>
+            <a href="#featured-drops" class="btn btn-secondary">View Past Drops</a>
           </div>
 
-          <div class="micro-proof">
+          <div class="hero-badges">
             <span>Only 25 spots per drop</span>
-            <span>20 newsletter access spots</span>
-            <span>5 VIP guaranteed spots</span>
+            <span>20 subscriber spots</span>
+            <span>5 VIP spots</span>
           </div>
         </div>
 
-        <div class="hero-card">
-          <img
-            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80"
-            alt="Luxury cake by Trip’s Sweet Treats"
-          />
-          <div class="hero-badge">
-            <strong>Next Drop: April 26</strong>
-            <span>Join the email list now. When it’s gone, it’s gone. Cake doesn’t clone itself.</span>
+        <div class="hero-visual">
+          <div class="hero-logo-card">
+            <img
+              src="images/trips-sweet-treats-logo-dark.webp"
+              alt="Trip's Sweet Treats"
+              class="hero-logo"
+              width="900"
+              height="900"
+            />
           </div>
         </div>
+
       </div>
     </section>
 
-    <section class="section" id="drop">
-      <div class="container">
-        <h2 class="section-title">Next Monthly Drop</h2>
-        <p class="section-subtitle">
-          One featured cake. One release window. Limited quantity. No chaos, no 3 a.m. burnout,
-          no fifty-cake death march.
-        </p>
+    <section class="announcement">
+      <div class="container announcement-grid">
+        <div class="announcement-card">
+          <p class="mini-label">Next Drop</p>
+          <h2>Next Cake Drop: April 26</h2>
+          <p>
+            One featured cake. One release window. One shot to grab it before it sells out.
+          </p>
+        </div>
 
-        <div class="countdown-wrap">
-          <div class="countdown-card">
-            <h3 style="margin-top:0;">Countdown to the next drop</h3>
-            <p style="color: var(--muted); margin-bottom:0;">
-              The next release opens on <strong>April 26, 2026 at 7:00 PM</strong>.
-            </p>
-
-            <div class="countdown-grid" id="countdown">
-              <div class="time-box">
-                <strong id="days">00</strong>
-                <span>Days</span>
-              </div>
-              <div class="time-box">
-                <strong id="hours">00</strong>
-                <span>Hours</span>
-              </div>
-              <div class="time-box">
-                <strong id="minutes">00</strong>
-                <span>Minutes</span>
-              </div>
-              <div class="time-box">
-                <strong id="seconds">00</strong>
-                <span>Seconds</span>
-              </div>
+        <div class="announcement-card countdown-card">
+          <p class="mini-label">Countdown</p>
+          <div class="countdown" id="countdown">
+            <div class="time-box">
+              <strong id="days">00</strong>
+              <span>Days</span>
             </div>
-
-            <span class="drop-status">Signups are open now.</span>
-          </div>
-
-          <div class="info-card">
-            <h3 style="margin-top:0;">This month’s setup</h3>
-            <ul>
-              <li>20 newsletter subscribers get purchase access</li>
-              <li>5 VIP members get guaranteed access</li>
-              <li>Everyone else joins the waitlist for the next drop</li>
-              <li>Customers receive the private order link by email/text</li>
-              <li>Once sold out, the drop is closed</li>
-            </ul>
+            <div class="time-box">
+              <strong id="hours">00</strong>
+              <span>Hours</span>
+            </div>
+            <div class="time-box">
+              <strong id="minutes">00</strong>
+              <span>Minutes</span>
+            </div>
+            <div class="time-box">
+              <strong id="seconds">00</strong>
+              <span>Seconds</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="how">
+    <section class="how-it-works section" id="how-it-works">
       <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">
-          Dead simple. People join. People wait. The drop opens. The lucky ones eat cake.
-        </p>
+        <div class="section-heading">
+          <p class="eyebrow">How It Works</p>
+          <h2>No chaos. No overbooking. No 50-cake death spiral.</h2>
+          <p>
+            The system is simple on purpose. People join the list, wait for the monthly
+            drop, and the selected buyers get first access.
+          </p>
+        </div>
 
-        <div class="grid-3">
-          <div class="step">
-            <div class="step-number">1</div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">01</div>
             <h3>Join the list</h3>
             <p>
-              Sign up for the newsletter and choose whether you want standard drop access or VIP interest.
+              Subscribe for drop alerts and decide whether you want standard access
+              or VIP interest.
             </p>
-          </div>
+          </article>
 
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Get the release alert</h3>
+          <article class="step-card">
+            <div class="step-number">02</div>
+            <h3>Get the drop alert</h3>
             <p>
-              Before each monthly drop, selected subscribers and VIPs get the access link first.
+              Before the monthly release, selected subscribers and VIP buyers
+              get the order link.
             </p>
-          </div>
+          </article>
 
-          <div class="step">
-            <div class="step-number">3</div>
+          <article class="step-card">
+            <div class="step-number">03</div>
             <h3>Claim your cake</h3>
             <p>
-              When the limited quantity is gone, it’s done. No sneaky extra orders, no exceptions.
+              Once the limited quantity sells out, that drop is finished.
+              Miss it and you wait for the next one.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="newsletter">
+    <section class="featured-drops section" id="featured-drops">
       <div class="container">
-        <div class="newsletter-layout">
-          <div class="newsletter-box">
-            <h2 class="section-title" style="margin-top:0;">Join the Drop List</h2>
-            <p class="section-subtitle" style="margin-bottom:0;">
-              Get first shot at the next cake release, exclusive flavor updates, and access to sold-out drops before the public.
-            </p>
+        <div class="section-heading">
+          <p class="eyebrow">Featured Drops</p>
+          <h2>Past and future favorites</h2>
+          <p>
+            These are the kind of drops people will be stalking their inbox for.
+          </p>
+        </div>
 
-            <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST">
-              <input type="hidden" name="_subject" value="New Trip's Sweet Treats Signup" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
+        <div class="carousel-shell">
+          <button class="carousel-btn prev" type="button" onclick="prevSlide()" aria-label="Previous slide">‹</button>
 
-              <input type="text" name="name" placeholder="Your name" required />
-              <input type="email" name="email" placeholder="Your email" required />
-              <input type="tel" name="phone" placeholder="Phone number (optional)" />
+          <div class="carousel-window">
+            <div class="carousel-track" id="carouselTrack">
 
-              <select name="access_type" required>
-                <option value="">Choose access type</option>
-                <option value="Standard Drop List">Standard Drop List</option>
-                <option value="VIP Interest">VIP Interest</option>
-              </select>
+              <article class="cake-slide active">
+                <div class="cake-image-wrap">
+                  <img
+                    src="images/peach-cobbler-pound-cake.webp"
+                    alt="Peach Cobbler Pound Cake"
+                    loading="lazy"
+                    width="900"
+                    height="1200"
+                  />
+                </div>
+                <div class="cake-copy">
+                  <p class="cake-tag">Fan Favorite</p>
+                  <h3>Peach Cobbler Pound Cake</h3>
+                  <p>
+                    Sticky peach topping, rich glaze, cobbler crunch, and enough attitude
+                    to make people irrational.
+                  </p>
+                </div>
+              </article>
 
-              <label class="small">
-                <input type="checkbox" name="newsletter_opt_in" value="Yes" required />
-                Yes, I want alerts for upcoming monthly drops and release updates.
-              </label>
+              <article class="cake-slide">
+                <div class="cake-image-wrap">
+                  <img
+                    src="images/strawberry-crunch-pound-cake.webp"
+                    alt="Strawberry Crunch Pound Cake"
+                    loading="lazy"
+                    width="900"
+                    height="1200"
+                  />
+                </div>
+                <div class="cake-copy">
+                  <p class="cake-tag">Spring Drop</p>
+                  <h3>Strawberry Crunch Pound Cake</h3>
+                  <p>
+                    Fresh strawberries, cream glaze, buttery cake, and that crunchy topping
+                    people lose their minds over.
+                  </p>
+                </div>
+              </article>
 
-              <button type="submit" class="btn btn-primary">Sign Me Up</button>
-            </form>
+              <article class="cake-slide">
+                <div class="cake-image-wrap">
+                  <img
+                    src="images/apple-caramel-pound-cake.webp"
+                    alt="Apple Caramel Pound Cake"
+                    loading="lazy"
+                    width="900"
+                    height="1200"
+                  />
+                </div>
+                <div class="cake-copy">
+                  <p class="cake-tag">Cold Weather Killer</p>
+                  <h3>Apple Caramel Pound Cake</h3>
+                  <p>
+                    Deep caramel, soft apple topping, and old-school comfort dressed up
+                    like it knows it costs more.
+                  </p>
+                </div>
+              </article>
 
-            <p class="tiny-note">
-              Replace <strong>YOUR-EMAIL-HERE</strong> with the email that should receive form submissions.
-            </p>
-          </div>
-
-          <div class="vibe-box">
-            <h3 style="margin-top:0;">Why join?</h3>
-
-            <div class="drop-list">
-              <div class="pill">
-                <strong>Early access</strong>
-                First crack at the monthly release before the leftovers get picked clean.
-              </div>
-
-              <div class="pill">
-                <strong>VIP priority</strong>
-                VIP members get reserved access windows and priority alerts.
-              </div>
-
-              <div class="pill">
-                <strong>Exclusive flavor drops</strong>
-                Not every flavor gets posted publicly. The list gets the real gossip.
-              </div>
             </div>
+          </div>
 
-            <div class="stats">
-              <div class="stat">
-                <strong>25</strong>
-                <span>Total spots per drop</span>
-              </div>
-              <div class="stat">
-                <strong>20</strong>
-                <span>Newsletter access spots</span>
-              </div>
-              <div class="stat">
-                <strong>5</strong>
-                <span>VIP guaranteed spots</span>
-              </div>
+          <button class="carousel-btn next" type="button" onclick="nextSlide()" aria-label="Next slide">›</button>
+        </div>
+
+        <div class="carousel-dots">
+          <button class="dot active" onclick="goToSlide(0)" aria-label="Go to slide 1"></button>
+          <button class="dot" onclick="goToSlide(1)" aria-label="Go to slide 2"></button>
+          <button class="dot" onclick="goToSlide(2)" aria-label="Go to slide 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <strong>25</strong>
+          <span>Total spots per monthly drop</span>
+        </div>
+        <div class="stat-card">
+          <strong>20</strong>
+          <span>Newsletter access spots</span>
+        </div>
+        <div class="stat-card">
+          <strong>5</strong>
+          <span>VIP priority spots</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="join-drop section" id="join-drop">
+      <div class="container join-grid">
+
+        <div class="join-copy">
+          <p class="eyebrow">Join the Drop List</p>
+          <h2>Get the email before the chaos starts.</h2>
+          <p>
+            Subscribers get early drop news, flavor reveals, and first shot at new releases.
+            VIPs get priority access. Everyone else gets to watch from the sidelines and pretend
+            they were “just about to order.”
+          </p>
+
+          <div class="join-points">
+            <div class="join-point">
+              <strong>Early access alerts</strong>
+              <p>Know when the next drop hits before casual lurkers do.</p>
+            </div>
+            <div class="join-point">
+              <strong>VIP interest option</strong>
+              <p>Signal that you want a reserved shot at future cake drops.</p>
+            </div>
+            <div class="join-point">
+              <strong>Exclusive flavor updates</strong>
+              <p>See what’s coming before it gets posted everywhere else.</p>
             </div>
           </div>
         </div>
+
+        <div class="join-form-card">
+          <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST" class="drop-form">
+            <input type="hidden" name="_subject" value="Trip's Sweet Treats Drop Signup" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your name" required />
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" type="tel" name="phone" placeholder="Phone number" />
+
+            <label for="interest">Access Type</label>
+            <select id="interest" name="access_type" required>
+              <option value="">Choose one</option>
+              <option value="Standard Drop List">Standard Drop List</option>
+              <option value="VIP Interest">VIP Interest</option>
+            </select>
+
+            <label class="checkbox-wrap">
+              <input type="checkbox" name="opt_in" value="Yes" required />
+              <span>I want monthly cake drop alerts and release updates.</span>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-full">Join the List</button>
+          </form>
+        </div>
+
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">The Look Matters</h2>
-        <p class="section-subtitle">
-          This isn’t grocery store sheet cake energy. This is premium, limited, and worth waiting for.
-        </p>
+    <section class="social-proof section">
+      <div class="container proof-grid">
+        <div class="proof-card">
+          <p class="eyebrow">Why This Model Works</p>
+          <h2>Scarcity sells. Good cake sells faster.</h2>
+          <p>
+            This setup keeps demand high without burning him out trying to bake
+            like a machine every week.
+          </p>
+        </div>
 
-        <div class="gallery">
-          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80" alt="Elegant cake design" />
-          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=80" alt="Luxury dessert styling" />
-          <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=80" alt="Decorated celebration cake" />
+        <div class="proof-card">
+          <ul class="proof-list">
+            <li>Limited drops create urgency</li>
+            <li>Email list becomes the real business asset</li>
+            <li>TikTok drives hype and traffic</li>
+            <li>VIP access opens the door for recurring revenue later</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
+    <section class="faq section" id="faq">
       <div class="container">
-        <h2 class="section-title">FAQ</h2>
-        <p class="section-subtitle">
-          The usual questions people ask when they realize the cakes are limited and the world is unfair.
-        </p>
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions people ask when they realize the drops are limited</h2>
+        </div>
 
-        <div class="faq">
+        <div class="faq-list">
           <details>
-            <summary>How often are cake drops released?</summary>
-            <p>New cake drops happen once a month unless otherwise announced.</p>
+            <summary>How often do cake drops happen?</summary>
+            <p>Right now, Trip's Sweet Treats drops cakes once a month.</p>
           </details>
 
           <details>
-            <summary>Does signing up guarantee I can buy a cake?</summary>
-            <p>No. Standard subscribers get access to limited drop spots. VIP members have reserved priority access.</p>
+            <summary>Does joining the email list guarantee a cake?</summary>
+            <p>No. It gives you a chance at drop access. VIP buyers get reserved priority spots.</p>
           </details>
 
           <details>
             <summary>What happens if the drop sells out?</summary>
-            <p>That’s it. You join the waitlist and try again next month. Brutal, but efficient.</p>
+            <p>It’s over. You stay on the list and wait for the next release.</p>
           </details>
 
           <details>
-            <summary>How do VIPs work?</summary>
-            <p>VIPs are approved subscribers who’ve opted in for priority access. They receive guaranteed access to a limited number of spots each drop.</p>
+            <summary>What is VIP interest?</summary>
+            <p>It tells the brand you want priority access when VIP spots are assigned.</p>
           </details>
 
           <details>
-            <summary>Will the cake flavor be announced ahead of time?</summary>
-            <p>Usually yes. Newsletter subscribers and VIPs will get flavor previews and drop details before the public sees them.</p>
+            <summary>Will flavors be announced ahead of time?</summary>
+            <p>Usually yes. Subscribers and VIP buyers get the updates first.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="final-cta">
-          <h2>Get in Before the Next Drop</h2>
-          <p>
-            Join the newsletter, follow the hype, and be ready when the next release goes live.
-            Because once the cakes are gone, staring at TikTok clips won’t feed you.
-          </p>
-          <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
-            <a href="#newsletter" class="btn btn-primary">Join the Newsletter</a>
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="btn btn-secondary">Follow on TikTok</a>
-          </div>
+    <section class="final-cta section">
+      <div class="container final-cta-card">
+        <p class="eyebrow">Don't Miss the Next Drop</p>
+        <h2>Join now. Wait for the email. Move fast when it lands.</h2>
+        <p>
+          The drops are limited for a reason. Better to be on the list than staring at a sold-out post
+          like everybody else.
+        </p>
+
+        <div class="final-actions">
+          <a href="#join-drop" class="btn btn-primary">Join the Drop List</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="btn btn-secondary">Follow on TikTok</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-row">
-      <div>© 2026 Trip’s Sweet Treats. All rights reserved.</div>
-      <div>
-        Monthly cake drops • Limited quantity • VIP access available
-      </div>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© 2026 Trip's Sweet Treats. All rights reserved.</p>
+      <p>Monthly drops • Limited quantities • VIP access</p>
     </div>
   </footer>
 
@@ -893,6 +432,41 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    let currentSlide = 0;
+    const track = document.getElementById("carouselTrack");
+    const slides = document.querySelectorAll(".cake-slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("active", index === currentSlide);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    setInterval(nextSlide, 5000);
   </script>
+
 </body>
 </html>
