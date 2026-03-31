@@ -64,12 +64,14 @@ select {
 }
 
 .site-header {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  background: rgba(10, 10, 13, 0.72);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
 }
 
 .nav-wrap {
@@ -150,6 +152,12 @@ select {
 .btn-full {
   width: 100%;
 }
+
+.hero {
+  padding-top: 140px;
+}
+
+
 
 .hero {
   position: relative;
