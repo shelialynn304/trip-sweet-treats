@@ -75,23 +75,25 @@ select {
 }
 
 .nav-wrap {
+  height: 80px;        /* fixed height */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
-  min-height: 90px;
+}
+
+
+.brand-logo {
+  max-height: 65px;   /* key fix */
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  flex-shrink: 0;
-}
-
-.brand-logo {
-  width: 220px;
-  height: auto !important;
-  display: block;
+  overflow: hidden;   /* prevents logo from spilling down */
 }
 
 .brand img {
