@@ -1367,6 +1367,7 @@ select {
   position: absolute;
   top: 18px;
   left: 18px;
+  z-index: 5;
   background: linear-gradient(135deg, #f0b35d 0%, #d88a2d 100%);
   color: #1a1107;
   padding: 10px 14px;
