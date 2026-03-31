@@ -1030,3 +1030,206 @@ select {
     flex-direction: column;
   }
 }
+
+/* ===== VIP PAGE ===== */
+
+.vip-hero {
+  padding: 180px 0 90px;
+}
+
+.vip-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.vip-hero-copy h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin: 0 0 20px;
+}
+
+.vip-hero-text {
+  color: var(--muted);
+  font-size: 1.08rem;
+  margin-bottom: 28px;
+  max-width: 680px;
+}
+
+.vip-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.vip-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vip-badges span {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.vip-hero-card,
+.vip-feature-card,
+.vip-important-box,
+.vip-buy-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.vip-hero-card {
+  padding: 32px;
+}
+
+.vip-hero-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.vip-price-big {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent-2);
+  margin-bottom: 18px;
+}
+
+.vip-summary-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.vip-summary-list li + li {
+  margin-top: 10px;
+}
+
+.vip-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.vip-feature-card {
+  padding: 24px;
+}
+
+.vip-feature-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.vip-feature-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.vip-important-box {
+  padding: 32px;
+}
+
+.vip-important-box h2 {
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.vip-rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.vip-rule-card {
+  padding: 24px;
+  border-radius: 20px;
+}
+
+.vip-rule-card.good {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.vip-rule-card.warning {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.vip-rule-card h3 {
+  margin: 0 0 12px;
+}
+
+.vip-rule-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.vip-rule-card li + li {
+  margin-top: 10px;
+}
+
+.vip-disclaimer {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.vip-buy-card {
+  text-align: center;
+  padding: 36px 28px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.vip-buy-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.vip-buy-card p {
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.vip-buy-btn {
+  min-width: 260px;
+}
+
+.vip-buy-note {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .vip-hero-grid,
+  .vip-rules-grid,
+  .vip-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vip-hero-copy,
+  .vip-hero-card {
+    text-align: center;
+  }
+
+  .vip-hero-actions,
+  .vip-badges {
+    justify-content: center;
+  }
+}
