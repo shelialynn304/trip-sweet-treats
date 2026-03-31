@@ -83,7 +83,7 @@ select {
 
 
 .brand-logo {
-  max-height: 65px;   /* key fix */
+  max-height: 75px;   /* key fix */
   width: auto;
   height: auto;
   display: block;
