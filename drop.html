@@ -1,7 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Current Drop | Trip Confections</title>
+  <meta name="description" content="Limited batch luxury cakes. Small drops. High demand. Get access before they sell out." />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .next-drop {
+      padding: 80px 20px;
+      background: #0d0d0f;
+      color: #f5f1e8;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .next-drop-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .next-drop-image {
+      position: relative;
+    }
+
+    .drop-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: #d6a84f;
+      color: #111;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    .next-drop-photo {
+      width: 100%;
+      display: block;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #d6a84f;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .next-drop-copy h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+
+    .next-drop-subtext,
+    .next-drop-description {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #d7d1c6;
+      margin-bottom: 18px;
+    }
+
+    .drop-launch-box {
+      background: #151519;
+      border: 1px solid rgba(214, 168, 79, 0.22);
+      border-radius: 20px;
+      padding: 22px;
+      margin: 28px 0;
+    }
+
+    .drop-launch-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #d6a84f;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .drop-launch-time {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .countdown-box {
+      background: #0f0f12;
+      border-radius: 16px;
+      padding: 16px 10px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .countdown-box span {
+      display: block;
+    }
+
+    .countdown-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .countdown-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa08f;
+    }
+
+    .drop-status {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: #f1d79d;
+      font-weight: 600;
+    }
+
+    .next-drop-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .drop-detail {
+      background: #151519;
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .drop-detail strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .drop-detail span {
+      color: #cfc7ba;
+      font-size: 0.95rem;
+    }
+
+    .urgency-bar {
+      background: rgba(214, 168, 79, 0.1);
+      border: 1px solid rgba(214, 168, 79, 0.25);
+      color: #f3ddb0;
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 22px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .next-drop-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 26px 0 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #d6a84f;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .btn-secondary:hover {
+      border-color: #d6a84f;
+      color: #d6a84f;
+    }
+
+    .next-drop-note,
+    .text-link {
+      color: #c9c0b2;
+      font-size: 0.95rem;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 6px;
+      color: #d6a84f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .drop-proof {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .proof-pill {
+      background: #151519;
+      color: #e9dfd0;
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .next-drop-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .next-drop-details {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
 <section class="next-drop section" id="next-drop">
   <div class="container next-drop-grid">
-    <link rel="stylesheet" href="style.css" />
-    
+
     <div class="next-drop-image">
       <div class="drop-badge">Spring Drop</div>
       <img
@@ -13,11 +281,48 @@
 
     <div class="next-drop-copy">
       <p class="eyebrow">Current Drop</p>
+
       <h2>Old Fashioned Lemon Blueberry Pound Cake</h2>
+
       <p class="next-drop-subtext">
-        Bright lemon flavor, blueberries baked all through the cake, and a classic
-        old fashioned pound cake base made for spring. Rich, clean, and limited.
+        Bright lemon flavor, real blueberries baked throughout, and a dense, buttery crumb built from a true old-fashioned pound cake base. Clean ingredients. No shortcuts. Just done right.
       </p>
+
+      <p class="next-drop-description">
+        This is a 100% homemade, small-batch cake made from a classic scratch recipe. No boxed mix, no filler garbage, no mass production. Just real butter, fresh eggs, real lemon, and the kind of old-school method that gives you a rich texture and flavor people actually remember.
+      </p>
+
+      <div class="drop-launch-box">
+        <div class="drop-launch-label">Next Public Drop Opens</div>
+        <div class="drop-launch-time">Friday, April 10 at 12:00 PM</div>
+
+        <div class="countdown" id="countdown">
+          <div class="countdown-box">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <div class="drop-status" id="drop-status">
+          VIP access opens 24 hours earlier.
+        </div>
+      </div>
+
+      <div class="urgency-bar">
+        Only a limited number of cakes will be released in this drop. Once they’re gone, they’re gone. No endless stock. No “we’ll just make more.” That’s not how a real drop works.
+      </div>
 
       <div class="next-drop-details">
         <div class="drop-detail">
@@ -26,27 +331,74 @@
         </div>
 
         <div class="drop-detail">
-          <strong>Season</strong>
-          <span>Spring Release</span>
+          <strong>Drop Date</strong>
+          <span>April 10, 12:00 PM</span>
         </div>
 
         <div class="drop-detail">
-          <strong>Availability</strong>
-          <span>Limited Quantity</span>
+          <strong>Batch Size</strong>
+          <span>Limited Release</span>
         </div>
       </div>
 
       <div class="next-drop-actions">
-        <a href="drop.html" class="btn btn-primary">View This Drop</a>
-        <a href="vip-access.html" class="btn btn-secondary">Get VIP Access</a>
+        <a href="#order-now" class="btn btn-primary">Secure Your Cake</a>
+        <a href="vip-access.html" class="btn btn-secondary">Get VIP Early Access</a>
       </div>
 
       <p class="next-drop-note">
-        VIP buyers get guaranteed early access before the public release opens.
+        VIP buyers get first shot before the public drop opens.
       </p>
 
       <a href="#join-drop" class="text-link">Or join the free drop list</a>
+
+      <div class="drop-proof">
+        <span class="proof-pill">100% Homemade</span>
+        <span class="proof-pill">Classic Scratch Recipe</span>
+        <span class="proof-pill">Small Batch Only</span>
+        <span class="proof-pill">Limited Release</span>
+      </div>
     </div>
 
   </div>
 </section>
+
+<script>
+  const dropDate = new Date("2026-04-10T12:00:00-04:00").getTime();
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+  const statusEl = document.getElementById("drop-status");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = dropDate - now;
+
+    if (distance <= 0) {
+      daysEl.textContent = "00";
+      hoursEl.textContent = "00";
+      minutesEl.textContent = "00";
+      secondsEl.textContent = "00";
+      statusEl.textContent = "The drop is now live. First come, first served.";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.textContent = String(days).padStart(2, "0");
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minutesEl.textContent = String(minutes).padStart(2, "0");
+    secondsEl.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
