@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Confirmed | Trip’s Sweet Treats</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111111;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #2d2d2d;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .header {
+      background: #000000;
+      padding: 40px 28px 26px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #f8d24a;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.2;
+      color: #f8d24a;
+    }
+
+    .subtext {
+      margin: 12px 0 0;
+      color: #d2d2d2;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .content {
+      padding: 30px 28px 34px;
+    }
+
+    p {
+      color: #d8d8d8;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 0 18px;
+    }
+
+    .product-box,
+    .info-box {
+      background: #121212;
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+
+    .product-title {
+      margin: 0 0 8px;
+      color: #f8d24a;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .product-copy {
+      margin: 0;
+      color: #e8e8e8;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .list-title {
+      margin: 0 0 12px;
+      color: #f8d24a;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .steps {
+      margin: 0;
+      padding-left: 18px;
+      color: #e8e8e8;
+    }
+
+    .steps li {
+      margin: 0 0 10px;
+      line-height: 1.7;
+    }
+
+    .cta-row {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f8d24a;
+      color: #111111;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+    }
+
+    .fine-print {
+      margin-top: 22px;
+      text-align: center;
+      color: #9d9d9d;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        margin: 30px auto;
+        padding: 14px;
+      }
+
+      .header {
+        padding: 32px 20px 22px;
+      }
+
+      .content {
+        padding: 24px 20px 28px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="header">
+        <div class="eyebrow">Order Confirmed</div>
+        <h1>You Got One.</h1>
+        <p class="subtext">
+          Your Lemon Blueberry Pound Cake order is confirmed.
+        </p>
+      </div>
+
+      <div class="content">
+        <p>
+          Nice move. Your order is in, and your cake is officially claimed from this drop.
+        </p>
+
+        <div class="product-box">
+          <h2 class="product-title">Old Fashioned Lemon Blueberry Pound Cake</h2>
+          <p class="product-copy">
+            Rich, buttery pound cake with bright lemon flavor, blueberries baked all the way through, and a light glaze for the perfect sweet-tart finish.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3 class="list-title">What happens next:</h3>
+          <ol class="steps">
+            <li>You’ll receive your order confirmation details by email.</li>
+            <li>Your cake will be prepared as part of this limited batch.</li>
+            <li>You’ll get pickup or delivery details once your order is ready.</li>
+          </ol>
+        </div>
+
+        <p>
+          This was a limited drop, so once the remaining cakes are gone, that’s it.
+        </p>
+
+        <p>
+          Keep an eye on your email for any updates and future drop announcements.
+        </p>
+
+        <div class="cta-row">
+          <a href="https://tripssweettreats.com" class="btn">Back to Site</a>
+        </div>
+
+        <p class="fine-print">
+          Thanks for ordering from Trip’s Sweet Treats. Limited drops. Real homemade cake. No sad mass-produced nonsense.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
