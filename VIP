@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VIP Access Confirmed</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #1a1a1a;
+      border-radius: 16px;
+      border: 1px solid #2d2d2d;
+    }
+
+    h1 {
+      color: #f8d24a;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #d8d8d8;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .box {
+      margin: 25px 0;
+      padding: 20px;
+      background: #121212;
+      border-radius: 12px;
+      border: 1px solid #2a2a2a;
+      text-align: left;
+    }
+
+    .box strong {
+      color: #f8d24a;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 26px;
+      background: #f8d24a;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .small {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    
+    <h1>You’re In.</h1>
+    <p style="color:#f8d24a; font-weight:bold;">Next drop announced soon.</p>
+    <p>VIP Access Confirmed</p>
+
+    <p>
+      You now have priority access to every drop before it goes public.
+    </p>
+
+    <div class="box">
+      <p><strong>What happens next:</strong></p>
+      <p>• You’ll get an email before each drop goes live</p>
+      <p>• You’ll receive a private early access link</p>
+      <p>• You can order before the public rush begins</p>
+    </div>
+
+    <p>
+      Every drop is limited. Once VIP access closes, the rest goes public — and what’s left doesn’t last long.
+    </p>
+
+    <a href="https://tripssweettreats.com" class="cta">
+      Back to Site
+    </a>
+
+    <p class="small">
+      VIP gives you early access — not unlimited supply. Stay ready.
+    </p>
+
+  </div>
+
+</body>
+</html>
