@@ -3,103 +3,464 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VIP Access Confirmed</title>
+  <title>VIP Access Confirmed | Trip's Sweet Treats</title>
+  <meta name="description" content="VIP access confirmed for Trip's Sweet Treats May drop. Early access before the public release." />
 
   <style>
+    :root {
+      --bg: #0b0b0f;
+      --bg-2: #141419;
+      --card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f7f3ed;
+      --muted: #c8c0b4;
+      --gold: #f0c76a;
+      --gold-2: #d6a84f;
+      --shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #111;
-      color: #f5f5f5;
-      text-align: center;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(240, 199, 106, 0.12), transparent 24%),
+        radial-gradient(circle at top left, rgba(255, 123, 137, 0.08), transparent 20%),
+        linear-gradient(180deg, #08080b 0%, #101018 45%, #0b0b11 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     .container {
-      max-width: 600px;
-      margin: 60px auto;
-      padding: 30px;
-      background: #1a1a1a;
-      border-radius: 16px;
-      border: 1px solid #2d2d2d;
+      width: min(92%, 1080px);
+      margin: 0 auto;
+    }
+
+    .page {
+      padding: 70px 0 80px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 40px 32px;
+      text-align: center;
+      margin-bottom: 26px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(240, 199, 106, 0.12), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(240, 199, 106, 0.08), transparent 20%);
+      pointer-events: none;
+    }
+
+    .hero-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(240, 199, 106, 0.12);
+      border: 1px solid rgba(240, 199, 106, 0.22);
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
     h1 {
-      color: #f8d24a;
-      font-size: 32px;
-      margin-bottom: 10px;
+      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: #fffaf2;
     }
 
-    p {
-      color: #d8d8d8;
-      line-height: 1.6;
-      font-size: 16px;
+    .subhead {
+      margin: 0 auto 18px;
+      max-width: 760px;
+      font-size: 1.08rem;
+      color: var(--muted);
     }
 
-    .box {
-      margin: 25px 0;
-      padding: 20px;
-      background: #121212;
-      border-radius: 12px;
-      border: 1px solid #2a2a2a;
-      text-align: left;
-    }
-
-    .box strong {
-      color: #f8d24a;
-    }
-
-    .cta {
+    .vip-confirmed {
       display: inline-block;
-      margin-top: 20px;
-      padding: 14px 26px;
-      background: #f8d24a;
+      margin: 0 0 20px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f0c76a 0%, #d6a84f 100%);
       color: #111;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(214, 168, 79, 0.22);
+    }
+
+    .spots-note {
+      max-width: 700px;
+      margin: 0 auto 24px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background: rgba(240, 199, 106, 0.08);
+      border: 1px solid rgba(240, 199, 106, 0.18);
+      color: #f3ddb0;
+      font-weight: 700;
+    }
+
+    .countdown-wrap {
+      margin-top: 28px;
+    }
+
+    .countdown-label {
+      margin: 0 0 12px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 18px 12px;
+      text-align: center;
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: clamp(1.6rem, 4vw, 2.7rem);
+      line-height: 1;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .time-box span {
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+    }
+
+    .status-line {
+      margin-top: 16px;
+      color: #f3ddb0;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: #fffaf2;
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .list li + li {
+      margin-top: 10px;
+    }
+
+    .highlight-box {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(240, 199, 106, 0.08);
+      border: 1px solid rgba(240, 199, 106, 0.18);
+      color: #f3ddb0;
+      font-weight: 700;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s ease;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 10px;
+      cursor: pointer;
     }
 
-    .small {
+    .btn-primary {
+      background: linear-gradient(135deg, #f0c76a 0%, #d6a84f 100%);
+      color: #111;
+      box-shadow: 0 12px 24px rgba(214, 168, 79, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(214, 168, 79, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-1px);
+    }
+
+    .footer-note {
+      text-align: center;
       margin-top: 20px;
-      font-size: 14px;
-      color: #999;
+      color: #9f978b;
+      font-size: 0.95rem;
     }
 
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 40px 0 60px;
+      }
+
+      .hero-card,
+      .card {
+        padding: 24px 18px;
+      }
+
+      .action-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
-    
-    <h1>You’re In.</h1>
-    <p style="color:#f8d24a; font-weight:bold;">Next drop announced soon.</p>
-    <p>VIP Access Confirmed</p>
+  <main class="page">
+    <div class="container">
 
-    <p>
-      You now have priority access to every drop before it goes public.
-    </p>
+      <section class="hero-card">
+        <div class="eyebrow">VIP Access Confirmed</div>
+        <h1>You’re In.</h1>
+        <div class="vip-confirmed">May VIP Access Locked In — Lemon Blueberry Drop</div>
 
-    <div class="box">
-      <p><strong>What happens next:</strong></p>
-      <p>• You’ll get an email before the drop goes live</p>
-      <p>• You’ll receive a private early access link</p>
-      <p>• You can order before the public rush begins</p>
-    </div>
+        <p class="subhead">
+          You now have <strong>priority access for the May drop</strong> before the public gets a shot.
+          This page is for <strong>May only</strong> — not future drops.
+        </p>
 
-    <p>
-      Every drop is limited. Once VIP access closes, the rest goes public — and what’s left doesn’t last long.
-    </p>
+        <div class="spots-note">
+          Only <strong>(5)</strong> VIP spots exist this month. You got one of them. That already puts you ahead of everybody else still hoping luck does the job.
+        </div>
 
-    <a href="https://tripssweettreats.com" class="cta">
-      Back to Site
-    </a>
+        <div class="countdown-wrap">
+          <p class="countdown-label">VIP access opens in</p>
 
-    <p class="small">
-      VIP gives you early access — not unlimited supply. Stay ready.
-    </p>
+          <div class="countdown" id="countdown">
+            <div class="time-box">
+              <strong id="days">00</strong>
+              <span>Days</span>
+            </div>
+            <div class="time-box">
+              <strong id="hours">00</strong>
+              <span>Hours</span>
+            </div>
+            <div class="time-box">
+              <strong id="minutes">00</strong>
+              <span>Minutes</span>
+            </div>
+            <div class="time-box">
+              <strong id="seconds">00</strong>
+              <span>Seconds</span>
+            </div>
+          </div>
 
+          <div class="status-line" id="status-line">
+            Watch your email. Your private VIP purchase link will be sent before the public release.
+          </div>
+        </div>
+
+        <div class="action-row">
+          <a href="https://tripssweettreats.com/drop.html" class="btn btn-primary">View This Month’s Drop</a>
+          <a href="https://www.tiktok.com/@roberttriplett250" target="_blank" rel="noopener" class="btn btn-secondary">Follow on TikTok</a>
+          <a href="https://tripssweettreats.com" class="btn btn-secondary">Back to Site</a>
+        </div>
+      </section>
+
+<section class="card" style="margin-top: 24px;">
+  <p class="eyebrow">May VIP Preview</p>
+  <h2>About May’s Cake</h2>
+
+  <p>
+    May’s drop is an <strong>old-fashioned lemon blueberry pound bundt cake</strong>
+    made from a real family recipe. This is the kind of cake that tastes like somebody actually gave a damn.
+  </p>
+
+  <p>
+    The base is a rich, buttery <strong>lemon-flavored pound cake</strong> with
+    <strong>blueberries baked throughout the cake</strong>, so the flavor isn’t just sitting on top pretending to work.
+  </p>
+
+  <p>
+    It’s finished with a <strong>sugar glaze</strong> and topped with
+    <strong>fresh blueberries and lemon</strong> for a bright finish that cuts through the richness the right way.
+  </p>
+
+  <div class="highlight-box">
+    <strong>What makes this one different:</strong> old family recipe, real bundt texture, homemade glaze,
+    and a true small-batch release for May only.
   </div>
+</section>
+
+
+      <section class="grid">
+        <div class="card">
+          <h2>What happens next</h2>
+          <ul class="list">
+            <li>You’ll get an email before the public drop goes live.</li>
+            <li>You’ll receive a private early-access purchase link.</li>
+            <li>You’ll be able to order before the public rush starts.</li>
+            <li>Once public access opens, whatever is left is fair game.</li>
+          </ul>
+
+          <div class="highlight-box">
+            VIP gives you the early shot. It does <strong>not</strong> mean unlimited supply, and it does <strong>not</strong> cover future months.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Read this so nothing gets weird later</h2>
+          <p>
+            Your VIP purchase covers <strong>May drop access only</strong>. It gives you priority access to buy before the public release.
+          </p>
+          <p>
+            The actual cake still needs to be purchased when your VIP link goes live.
+          </p>
+          <p>
+            So no, this is not a golden Willy Wonka lifetime pass. It’s better: it gets you in front of the public for the drop that matters right now.
+          </p>
+
+          <div class="highlight-box">
+            Stay ready. Check your inbox. When the VIP email lands, move like you mean it.
+          </div>
+        </div>
+      </section>
+
+      <p class="footer-note">
+        Trip’s Sweet Treats VIP Access • May Drop Only • Limited batch • Pickup area applies
+      </p>
+
+    </div>
+  </main>
+
+  <script>
+    // Set this to when VIP buyers get their early-access link / VIP ordering window opens
+    const vipOpenDate = new Date("2026-05-08T12:00:00-04:00").getTime();
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const statusLine = document.getElementById("status-line");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = vipOpenDate - now;
+
+      if (distance <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        statusLine.textContent = "VIP access is now open. Check your email for your private purchase link.";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(days).padStart(2, "0");
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 
 </body>
 </html>
