@@ -9,17 +9,41 @@
     content="Reserve VIP Drop Access for Trip's Sweet Treats. Get guaranteed purchase access before the public release. Cake sold separately."
   />
   <link rel="stylesheet" href="style.css" />
-<!-- MailerLite Universal -->
-<script>
+
+  <!-- MailerLite Universal -->
+  <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
     n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '2236682');
-</script>
-<!-- End MailerLite Universal -->
-  
-  
+  </script>
+  <!-- End MailerLite Universal -->
+
+  <style>
+    .vip-spots-alert {
+      display: inline-block;
+      margin: 0 0 18px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(214, 168, 79, 0.12);
+      border: 1px solid rgba(214, 168, 79, 0.28);
+      color: #f3ddb0;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .vip-urgency-box {
+      margin: 0 0 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(214, 168, 79, 0.1);
+      border: 1px solid rgba(214, 168, 79, 0.24);
+      color: #f3ddb0;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
 
@@ -33,16 +57,16 @@
         />
       </a>
 
-     <nav class="main-nav">
-  <a href="index.html">Back to Home</a>
-  <a href="drop.html">This Month’s Drop</a>
-  <a href="https://www.tiktok.com/@roberttriplett250" target="_blank" rel="noopener">TikTok</a>
-  <a
-    href="javascript:void(0)"
-    class="btn btn-primary ml-onclick-form"
-    onclick="ml('show', 'tnzaLd', true)"
-  >Request More Info</a>
-</nav>
+      <nav class="main-nav">
+        <a href="index.html">Back to Home</a>
+        <a href="drop.html">This Month’s Drop</a>
+        <a href="https://www.tiktok.com/@roberttriplett250" target="_blank" rel="noopener">TikTok</a>
+        <a
+          href="javascript:void(0)"
+          class="btn btn-primary ml-onclick-form"
+          onclick="ml('show', 'tnzaLd', true)"
+        >Request More Info</a>
+      </nav>
 
       <a href="#vip-buy" class="nav-cta">Get VIP Access</a>
     </div>
@@ -58,6 +82,8 @@
             VIP Drop Access gives you a guaranteed opportunity to purchase in this month’s release
             before the public gets access. Spots are limited each month.
           </p>
+
+          <div class="vip-spots-alert">Only (5) spots remaining this month.</div>
 
           <div class="vip-hero-actions">
             <a href="#vip-buy" class="btn btn-primary">Reserve VIP Access</a>
@@ -162,6 +188,10 @@
           <p>
             If you want guaranteed access to this month’s drop, grab a VIP spot before they’re gone.
           </p>
+
+          <div class="vip-urgency-box">
+            Only <strong>(5)</strong> VIP spots remaining this month. Once they’re gone, you’re back in the public scramble.
+          </div>
 
           <a href="YOUR-PAYMENT-LINK-HERE" class="btn btn-primary vip-buy-btn">
             Reserve VIP Access
